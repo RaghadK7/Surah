@@ -1,5 +1,3 @@
-// src/screens/OnboardingScreen/index.js
-
 import React, { useRef, useState } from 'react';
 import {
   View,
@@ -18,12 +16,14 @@ const OnboardingScreen = ({ navigation }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const flatListRef = useRef(null);
 
+  // When Slides Change
   const handleScroll = (event) => {
     const scrollPosition = event.nativeEvent.contentOffset.x;
     const index = Math.round(scrollPosition / width);
     setCurrentIndex(index);
   };
 
+  //Navigate to Next Slide
   const handleNext = () => {
     if (currentIndex < SLIDES.length - 1) {
       flatListRef.current?.scrollToIndex({
@@ -35,26 +35,33 @@ const OnboardingScreen = ({ navigation }) => {
     }
   };
 
+  // Skip Slide
   const handleSkip = () => {
     handleDone();
   };
 
+  // Finish and move to the app
   const handleDone = () => {
-    navigation.replace('Splash');
+    // Move to Permissions
+    navigation.replace('Permissions');
   };
 
+  // Slides Styles
   const renderSlide = ({ item }) => (
     <View style={styles.slideContainer}>
       <View style={styles.iconContainer}>
         <Text style={styles.icon}>{item.icon}</Text>
       </View>
+
       <Text style={styles.titleAr}>{item.titleAr}</Text>
       <Text style={styles.titleEn}>{item.titleEn}</Text>
+
       <Text style={styles.descriptionAr}>{item.descriptionAr}</Text>
       <Text style={styles.descriptionEn}>{item.descriptionEn}</Text>
     </View>
   );
 
+  // Dot Styles
   const renderPagination = () => (
     <View style={styles.pagination}>
       {SLIDES.map((_, index) => (
@@ -69,6 +76,7 @@ const OnboardingScreen = ({ navigation }) => {
     </View>
   );
 
+  // Buttuons Styles
   const renderButtons = () => {
     const isLastSlide = currentIndex === SLIDES.length - 1;
 

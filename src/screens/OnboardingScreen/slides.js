@@ -1,5 +1,3 @@
-// src/screens/OnboardingScreen/slides.js
-
 export const SLIDES = [
   {
     id: '1',

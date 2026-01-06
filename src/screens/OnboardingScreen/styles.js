@@ -1,5 +1,3 @@
-// src/screens/OnboardingScreen/styles.js
-
 import { StyleSheet, Dimensions } from 'react-native';
 import { COLORS } from '../../config/colors';
 
