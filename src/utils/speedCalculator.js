@@ -1,12 +1,9 @@
-// src/utils/speedCalculator.js
-
-import { SPEED_LIMITS, SPEED_STATUS } from '../config/constants';
+import { SPEED_LIMITS, SPEED_STATUS } from "../config/constants";
 
 /**
- * تحديد حالة السرعة (آمن / تحذير / خطر)
- * @param {number} currentSpeed - السرعة الحالية
- * @param {number} speedLimit - حد السرعة
- * @returns {string} - حالة السرعة
+ * @param {number} currentSpeed
+ * @param {number} speedLimit
+ * @returns {string}
  */
 export const getSpeedStatus = (currentSpeed, speedLimit) => {
   if (!currentSpeed || !speedLimit) {
@@ -25,10 +22,9 @@ export const getSpeedStatus = (currentSpeed, speedLimit) => {
 };
 
 /**
- * تحديد اللون حسب حالة السرعة
- * @param {string} status - حالة السرعة
- * @param {object} colors - نظام الألوان
- * @returns {string} - اللون
+ * @param {string} status
+ * @param {object} colors
+ * @returns {string}
  */
 export const getSpeedColor = (status, colors) => {
   switch (status) {
@@ -44,21 +40,20 @@ export const getSpeedColor = (status, colors) => {
 };
 
 /**
- * تنسيق السرعة للعرض
- * @param {number} speed - السرعة
- * @returns {string} - السرعة المنسقة
+
+ * @param {number} speed 
+ * @returns {string} 
  */
 export const formatSpeed = (speed) => {
   if (!speed || speed < 0) {
-    return '0';
+    return "0";
   }
   return Math.round(speed).toString();
 };
 
 /**
- * التحقق من الحاجة للتنبيه
- * @param {string} status - حالة السرعة
- * @returns {boolean} - هل يحتاج تنبيه؟
+ * @param {string} status
+ * @returns {boolean}
  */
 export const shouldAlert = (status) => {
   return status === SPEED_STATUS.WARNING || status === SPEED_STATUS.DANGER;

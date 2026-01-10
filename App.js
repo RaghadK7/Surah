@@ -1,8 +1,11 @@
-// App.js
-
-import React from 'react';
-import AppNavigator from './src/navigation/AppNavigator';
+import React from "react";
+import { SettingsProvider } from "./src/contexts/SettingsContext";
+import AppNavigator from "./src/navigation/AppNavigator";
 
 export default function App() {
-  return <AppNavigator />;
+  return (
+    <SettingsProvider>
+      <AppNavigator />
+    </SettingsProvider>
+  );
 }

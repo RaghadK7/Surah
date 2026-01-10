@@ -6,6 +6,7 @@ import SplashScreen from '../screens/SplashScreen';
 import OnboardingScreen from '../screens/OnboardingScreen';
 import PermissionsScreen from '../screens/PermissionsScreen';
 import MapScreen from '../screens/MapScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 
 const Stack = createNativeStackNavigator();
@@ -23,6 +24,7 @@ const AppNavigator = () => {
         <Stack.Screen name="Onboarding" component={OnboardingScreen} />
         <Stack.Screen name="Permissions" component={PermissionsScreen} />
         <Stack.Screen name="Map" component={MapScreen} />
+        <Stack.Screen name="Settings" component={SettingsScreen} />
 
 
 

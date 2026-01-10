@@ -1,9 +1,7 @@
-// src/screens/MapScreen/styles.js
+import { StyleSheet, Dimensions } from "react-native";
+import { COLORS } from "../../config/colors";
 
-import { StyleSheet, Dimensions } from 'react-native';
-import { COLORS } from '../../config/colors';
-
-const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get("window");
 
 export const styles = StyleSheet.create({
   container: {
@@ -15,8 +13,8 @@ export const styles = StyleSheet.create({
   },
   loadingContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     backgroundColor: COLORS.background,
   },
   loadingText: {
@@ -26,8 +24,8 @@ export const styles = StyleSheet.create({
   },
   errorContainer: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     backgroundColor: COLORS.background,
     padding: 40,
   },
@@ -38,13 +36,13 @@ export const styles = StyleSheet.create({
   errorText: {
     fontSize: 18,
     color: COLORS.primary,
-    textAlign: 'center',
+    textAlign: "center",
     marginBottom: 8,
   },
   errorSubtext: {
     fontSize: 14,
     color: COLORS.gray600,
-    textAlign: 'center',
+    textAlign: "center",
     marginBottom: 24,
   },
   retryButton: {
@@ -55,26 +53,26 @@ export const styles = StyleSheet.create({
   },
   retryButtonText: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     color: COLORS.white,
   },
   // Overlay Elements
   topOverlay: {
-    position: 'absolute',
+    position: "absolute",
     top: 60,
     left: 0,
     right: 0,
-    alignItems: 'center',
+    alignItems: "center",
     zIndex: 10,
   },
   speedDisplayContainer: {
     marginBottom: 16,
   },
   speedLimitContainer: {
-    // يظهر فوق الخريطة
+    // Display above map
   },
   alertBanner: {
-    position: 'absolute',
+    position: "absolute",
     top: 20,
     left: 20,
     right: 20,
@@ -82,8 +80,8 @@ export const styles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 20,
     borderRadius: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     shadowColor: COLORS.black,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
@@ -103,7 +101,7 @@ export const styles = StyleSheet.create({
   },
   alertText: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     color: COLORS.white,
     marginBottom: 2,
   },
@@ -114,8 +112,8 @@ export const styles = StyleSheet.create({
   },
   // Bottom Info Card
   bottomCard: {
-    position: 'absolute',
-    bottom: 90,
+    position: "absolute",
+    bottom: 180,
     left: 20,
     right: 20,
     backgroundColor: COLORS.white,
@@ -129,9 +127,9 @@ export const styles = StyleSheet.create({
     zIndex: 10,
   },
   infoRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     marginBottom: 12,
   },
   infoRowLast: {
@@ -143,7 +141,7 @@ export const styles = StyleSheet.create({
   },
   infoValue: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     color: COLORS.primary,
   },
   divider: {
@@ -153,16 +151,16 @@ export const styles = StyleSheet.create({
   },
   // Navigation Button
   navigationButton: {
-    position: 'absolute',
-    bottom: 20,
+    position: "absolute",
+    bottom: 90,
     left: 20,
     right: 20,
     backgroundColor: COLORS.primary,
     paddingVertical: 16,
     borderRadius: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
     shadowColor: COLORS.black,
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.2,
@@ -175,19 +173,19 @@ export const styles = StyleSheet.create({
   },
   navigationButtonText: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     color: COLORS.white,
     marginLeft: 8,
   },
   // Bottom Navigation
   bottomNav: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
     backgroundColor: COLORS.white,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    flexDirection: "row",
+    justifyContent: "space-around",
     paddingVertical: 12,
     paddingBottom: 20,
     borderTopWidth: 1,
@@ -200,13 +198,13 @@ export const styles = StyleSheet.create({
     zIndex: 15,
   },
   navItem: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     paddingVertical: 8,
     paddingHorizontal: 16,
   },
   navItemActive: {
-    // يمكن إضافة تأثير للعنصر النشط
+    // Can add active state styling
   },
   navIcon: {
     fontSize: 24,
@@ -218,7 +216,7 @@ export const styles = StyleSheet.create({
   },
   navLabelActive: {
     color: COLORS.primary,
-    fontWeight: '600',
+    fontWeight: "600",
   },
 });
 

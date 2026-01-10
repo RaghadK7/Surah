@@ -27,22 +27,22 @@ export const DEFAULT_SPEED_LIMITS = {
 
 // حالات السرعة
 export const SPEED_STATUS = {
-  SAFE: 'safe',
-  WARNING: 'warning',
-  DANGER: 'danger',
+  SAFE: "safe",
+  WARNING: "warning",
+  DANGER: "danger",
 };
 
 // رسائل التنبيهات
 export const ALERT_MESSAGES = {
   ar: {
-    safe: 'سرعة آمنة',
-    warning: 'تحذير - تجاوز السرعة',
-    danger: 'خطر! خفف السرعة فوراً',
+    safe: "سرعة آمنة",
+    warning: "تحذير - تجاوز السرعة",
+    danger: "خطر! خفف السرعة فوراً",
   },
   en: {
-    safe: 'Safe Speed',
-    warning: 'Warning - Speeding',
-    danger: 'Danger! Slow Down',
+    safe: "Safe Speed",
+    warning: "Warning - Speeding",
+    danger: "Danger! Slow Down",
   },
 };
 

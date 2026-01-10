@@ -1,22 +1,14 @@
-// src/screens/SplashScreen.js
-import React, { useEffect } from 'react';
-import {
-  View,
-  Image,
-  Text,
-  StyleSheet,
-  Dimensions,
-} from 'react-native';
-import { StatusBar } from 'expo-status-bar';
-import { COLORS } from '../config/colors';
+import React, { useEffect } from "react";
+import { View, Image, Text, StyleSheet, Dimensions } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { COLORS } from "../config/colors";
 
-
-const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get("window");
 
 const SplashScreen = ({ navigation }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('Onboarding');
+      navigation.replace("Onboarding");
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -25,12 +17,12 @@ const SplashScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar style="dark" />
-      
+
       {/* Splash */}
       <View style={styles.logoContainer}>
         <View style={styles.logoShadow}>
           <Image
-            source={require('../assets/images/logo.png')}
+            source={require("../assets/images/logo.png")}
             style={styles.logo}
             resizeMode="contain"
           />
@@ -56,44 +48,42 @@ const SplashScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.white, 
-    alignItems: 'center',
-    justifyContent: 'space-between',
+    backgroundColor: COLORS.white,
+    alignItems: "center",
+    justifyContent: "space-between",
     paddingVertical: 60,
   },
   logoContainer: {
     flex: 2,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
-  
+
   logo: {
-    width: width * 100, 
-    height: width * 0.90,
+    width: width * 100,
+    height: width * 0.9,
     borderRadius: 40,
   },
   textContainer: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     paddingHorizontal: 40,
-  
-  
   },
   tagline: {
     fontSize: 19,
     color: COLORS.gray600,
-    textAlign: 'center',
+    textAlign: "center",
     marginBottom: 5,
   },
   taglineEn: {
     fontSize: 18,
     color: COLORS.gray700,
-    textAlign: 'center',
+    textAlign: "center",
   },
   dotsContainer: {
-    flexDirection: 'row',
-    alignItems: 'center', 
+    flexDirection: "row",
+    alignItems: "center",
     gap: 8,
   },
   dot: {
@@ -103,7 +93,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.gray300,
   },
   dotActive: {
-    backgroundColor: COLORS.primary, 
+    backgroundColor: COLORS.primary,
     width: 30,
   },
 });
