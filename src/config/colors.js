@@ -42,6 +42,19 @@ export const COLORS = {
   shadowLight: "rgba(0, 0, 0, 0.05)",
   shadowMedium: "rgba(0, 0, 0, 0.1)",
   shadowDark: "rgba(0, 0, 0, 0.2)",
+
+  speedZones: {
+    veryLow: "#2196F3", // 30-50 km/h
+    low: "#FFB800", // 60-70 km/h
+    medium: "#FFA500", // 80-90 km/h
+    normal: "#00C853", // 100-110 km/h
+    high: "#FF6B6B", // 120 km/h
+    veryHigh: "#9C27B0", // 130+ km/h
+  },
+
+  white: "#FFFFFF",
+  black: "#000000",
+  shadow: "rgba(0, 0, 0, 0.3)",
 };
 
 export default COLORS;
