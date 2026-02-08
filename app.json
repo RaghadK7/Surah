@@ -2,6 +2,8 @@
   "plugins": [
     "expo-secure-store",
     "@react-native-firebase/app",
-    "@react-native-firebase/auth"
+    "@react-native-firebase/auth",
+    "expo-web-browser",
+    "expo-localization"
   ]
 }
