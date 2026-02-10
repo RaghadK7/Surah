@@ -1,12 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Image, Text, StyleSheet, Dimensions } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { COLORS } from "../config/colors";
+import { Asset } from "expo-asset";
 
 const { width, height } = Dimensions.get("window");
 
 const SplashScreen = ({ navigation }) => {
+  const [logoLoaded, setLogoLoaded] = useState(false);
+
   useEffect(() => {
+    const preloadLogo = async () => {
+      try {
+        console.log('🔄 Starting logo preload...');
+        await Asset.fromModule(
+          require("../assets/images/logo.png"),
+        ).downloadAsync();
+        console.log('✅ Logo preloaded successfully');
+        setLogoLoaded(true);
+      } catch (error) {
+        console.error("❌ Logo preload error:", error);
+        // Set to true anyway to show the Image component which will handle the error
+        setLogoLoaded(true);
+      }
+    };
+
+    preloadLogo();
+
     const timer = setTimeout(() => {
       navigation.replace("Onboarding");
     }, 3000);
@@ -20,13 +40,23 @@ const SplashScreen = ({ navigation }) => {
 
       {/* Splash */}
       <View style={styles.logoContainer}>
-        <View style={styles.logoShadow}>
+        {logoLoaded ? (
           <Image
             source={require("../assets/images/logo.png")}
             style={styles.logo}
             resizeMode="contain"
+            onLoadStart={() => console.log("🔄 Logo loading...")}
+            onLoad={() => console.log("✅ Logo loaded!")}
+            onError={(error) => {
+              console.error("❌ Logo load error:", error);
+              // You might want to show fallback UI here
+            }}
           />
-        </View>
+        ) : (
+          <View style={[styles.logo, styles.logoPlaceholder]}>
+            <Text style={styles.logoPlaceholderText}>🚗</Text>
+          </View>
+        )}
       </View>
 
       {/* App intro*/}
@@ -60,9 +90,23 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    width: width * 100,
-    height: width * 0.9,
+    width: width * 1.2,
+    height: width * 1.2,
     borderRadius: 40,
+  },
+  // ✅ أنماط placeholder للوجو
+  logoPlaceholder: {
+    backgroundColor: COLORS.primary,
+    justifyContent: "center",
+    alignItems: "center",
+    elevation: 5,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+  },
+  logoPlaceholderText: {
+    fontSize: 60,
+    color: COLORS.white,
   },
   textContainer: {
     flex: 1,

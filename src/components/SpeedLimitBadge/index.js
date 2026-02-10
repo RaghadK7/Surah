@@ -1,14 +1,20 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { useTranslation } from "react-i18next";
 import { COLORS } from "../../config/colors";
 
+/**
+ * Speed limit badge component
+ */
 const SpeedLimitBadge = ({ speedLimit }) => {
+  const { t } = useTranslation();
+
   return (
     <View style={styles.container}>
       <View style={styles.circle}>
         <Text style={styles.number}>{speedLimit}</Text>
       </View>
-      <Text style={styles.label}>الحد الأقصى</Text>
+      <Text style={styles.label}>{t("map.speed_limit")}</Text>
     </View>
   );
 };

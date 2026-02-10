@@ -1,16 +1,16 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from "react";
 import {
   View,
   Text,
   FlatList,
   TouchableOpacity,
   Dimensions,
-} from 'react-native';
-import { StatusBar } from 'expo-status-bar';
-import { SLIDES } from './slides';
-import { styles } from './styles';
+} from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { SLIDES } from "./slides";
+import { styles } from "./styles";
 
-const { width } = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 
 const OnboardingScreen = ({ navigation }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,8 +42,8 @@ const OnboardingScreen = ({ navigation }) => {
 
   // Finish and move to the app
   const handleDone = () => {
-    // Move to Permissions
-    navigation.replace('Permissions');
+    // Move to Login Screen
+    navigation.replace("Login");
   };
 
   // Slides Styles
@@ -67,10 +67,7 @@ const OnboardingScreen = ({ navigation }) => {
       {SLIDES.map((_, index) => (
         <View
           key={index}
-          style={[
-            styles.dot,
-            index === currentIndex && styles.dotActive,
-          ]}
+          style={[styles.dot, index === currentIndex && styles.dotActive]}
         />
       ))}
     </View>
@@ -97,8 +94,10 @@ const OnboardingScreen = ({ navigation }) => {
           onPress={handleNext}
           activeOpacity={0.8}
         >
-          <Text style={isLastSlide ? styles.doneButtonText : styles.nextButtonText}>
-            {isLastSlide ? 'ابدأ' : 'التالي'}
+          <Text
+            style={isLastSlide ? styles.doneButtonText : styles.nextButtonText}
+          >
+            {isLastSlide ? "ابدأ" : "التالي"}
           </Text>
         </TouchableOpacity>
       </View>

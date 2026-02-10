@@ -9,6 +9,11 @@ const KEYS = {
   SETTINGS: "app_settings",
   LANGUAGE: "app_language",
   THEME: "app_theme",
+
+  // Permissions
+  LOCATION_PERMISSION_GRANTED: "location_permission_granted",
+  NOTIFICATION_PERMISSION_GRANTED: "notification_permission_granted",
+  ONBOARDING_COMPLETE: "onboarding_complete",
 };
 
 export const secureStorage = {
@@ -99,6 +104,15 @@ export const regularStorage = {
     }
   },
 
+  // Compatibility methods
+  setItem: async (key, value) => {
+    return await regularStorage.save(key, value);
+  },
+
+  getItem: async (key) => {
+    return await regularStorage.get(key);
+  },
+
   // Clear all
   clearAll: async () => {
     try {
@@ -185,3 +199,95 @@ export default {
   settingsManager,
   KEYS,
 };
+
+// Permission manager for easier access
+export const PermissionManager = {
+  // Check if location permission has been granted before
+  hasLocationPermission: async () => {
+    try {
+      const granted = await regularStorage.get(
+        KEYS.LOCATION_PERMISSION_GRANTED,
+      );
+      return granted === "true";
+    } catch (error) {
+      console.error("Check location permission error:", error);
+      return false;
+    }
+  },
+
+  // Save location permission status
+  setLocationPermission: async (granted) => {
+    try {
+      return await regularStorage.save(
+        KEYS.LOCATION_PERMISSION_GRANTED,
+        granted ? "true" : "false",
+      );
+    } catch (error) {
+      console.error("Save location permission error:", error);
+      return false;
+    }
+  },
+
+  // Check if notification permission has been granted before
+  hasNotificationPermission: async () => {
+    try {
+      const granted = await regularStorage.get(
+        KEYS.NOTIFICATION_PERMISSION_GRANTED,
+      );
+      return granted === "true";
+    } catch (error) {
+      console.error("Check notification permission error:", error);
+      return false;
+    }
+  },
+
+  // Save notification permission status
+  setNotificationPermission: async (granted) => {
+    try {
+      return await regularStorage.save(
+        KEYS.NOTIFICATION_PERMISSION_GRANTED,
+        granted ? "true" : "false",
+      );
+    } catch (error) {
+      console.error("Save notification permission error:", error);
+      return false;
+    }
+  },
+
+  // Check if onboarding is complete
+  isOnboardingComplete: async () => {
+    try {
+      const complete = await regularStorage.get(KEYS.ONBOARDING_COMPLETE);
+      return complete === "true";
+    } catch (error) {
+      console.error("Check onboarding status error:", error);
+      return false;
+    }
+  },
+
+  // Mark onboarding as complete
+  setOnboardingComplete: async () => {
+    try {
+      return await regularStorage.save(KEYS.ONBOARDING_COMPLETE, "true");
+    } catch (error) {
+      console.error("Save onboarding status error:", error);
+      return false;
+    }
+  },
+
+  // Reset all permissions (for testing/development)
+  resetPermissions: async () => {
+    try {
+      await regularStorage.delete(KEYS.LOCATION_PERMISSION_GRANTED);
+      await regularStorage.delete(KEYS.NOTIFICATION_PERMISSION_GRANTED);
+      await regularStorage.delete(KEYS.ONBOARDING_COMPLETE);
+      return true;
+    } catch (error) {
+      console.error("Reset permissions error:", error);
+      return false;
+    }
+  },
+};
+
+// Export as named export for convenience
+export const StorageService = regularStorage;
