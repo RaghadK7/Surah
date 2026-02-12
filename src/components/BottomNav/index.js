@@ -14,7 +14,6 @@ const BottomNav = ({ activeTab = "map", onTabPress }) => {
   const { currentLanguage } = useLanguage();
   const { isDark } = useTheme();
 
-  // ========== ✅ DYNAMIC THEME COLORS ==========
   const getThemeColors = () => {
     if (isDark) {
       return {
@@ -136,9 +135,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 20,
   },
-  navItemActive: {
-    // Active state styling
-  },
+  navItemActive: {},
   iconContainer: {
     width: 48,
     height: 48,
