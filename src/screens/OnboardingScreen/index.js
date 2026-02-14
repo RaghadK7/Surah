@@ -61,7 +61,7 @@ const OnboardingScreen = ({ navigation }) => {
     </View>
   );
 
-  // Dot Styles
+  // Dot
   const renderPagination = () => (
     <View style={styles.pagination}>
       {SLIDES.map((_, index) => (

@@ -48,167 +48,167 @@ const MapScreen = ({ navigation }) => {
   // Create dynamic styles based on current language
   const styles = createStyles(currentLanguage);
 
-  // ✅ Dark Map Style for Google Maps
+  //  Dark Map Style for Google Maps
   const darkMapStyle = [
     {
-      "elementType": "geometry",
-      "stylers": [
+      elementType: "geometry",
+      stylers: [
         {
-          "color": "#242f3e"
-        }
-      ]
+          color: "#242f3e",
+        },
+      ],
     },
     {
-      "elementType": "labels.text.fill",
-      "stylers": [
+      elementType: "labels.text.fill",
+      stylers: [
         {
-          "color": "#746855"
-        }
-      ]
+          color: "#746855",
+        },
+      ],
     },
     {
-      "elementType": "labels.text.stroke",
-      "stylers": [
+      elementType: "labels.text.stroke",
+      stylers: [
         {
-          "color": "#242f3e"
-        }
-      ]
+          color: "#242f3e",
+        },
+      ],
     },
     {
-      "featureType": "administrative.locality",
-      "elementType": "labels.text.fill",
-      "stylers": [
+      featureType: "administrative.locality",
+      elementType: "labels.text.fill",
+      stylers: [
         {
-          "color": "#d59563"
-        }
-      ]
+          color: "#d59563",
+        },
+      ],
     },
     {
-      "featureType": "poi",
-      "elementType": "labels.text.fill",
-      "stylers": [
+      featureType: "poi",
+      elementType: "labels.text.fill",
+      stylers: [
         {
-          "color": "#d59563"
-        }
-      ]
+          color: "#d59563",
+        },
+      ],
     },
     {
-      "featureType": "poi.park",
-      "elementType": "geometry",
-      "stylers": [
+      featureType: "poi.park",
+      elementType: "geometry",
+      stylers: [
         {
-          "color": "#263c3f"
-        }
-      ]
+          color: "#263c3f",
+        },
+      ],
     },
     {
-      "featureType": "poi.park",
-      "elementType": "labels.text.fill",
-      "stylers": [
+      featureType: "poi.park",
+      elementType: "labels.text.fill",
+      stylers: [
         {
-          "color": "#6b9a76"
-        }
-      ]
+          color: "#6b9a76",
+        },
+      ],
     },
     {
-      "featureType": "road",
-      "elementType": "geometry",
-      "stylers": [
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [
         {
-          "color": "#38414e"
-        }
-      ]
+          color: "#38414e",
+        },
+      ],
     },
     {
-      "featureType": "road",
-      "elementType": "geometry.stroke",
-      "stylers": [
+      featureType: "road",
+      elementType: "geometry.stroke",
+      stylers: [
         {
-          "color": "#212a37"
-        }
-      ]
+          color: "#212a37",
+        },
+      ],
     },
     {
-      "featureType": "road",
-      "elementType": "labels.text.fill",
-      "stylers": [
+      featureType: "road",
+      elementType: "labels.text.fill",
+      stylers: [
         {
-          "color": "#9ca5b3"
-        }
-      ]
+          color: "#9ca5b3",
+        },
+      ],
     },
     {
-      "featureType": "road.highway",
-      "elementType": "geometry",
-      "stylers": [
+      featureType: "road.highway",
+      elementType: "geometry",
+      stylers: [
         {
-          "color": "#746855"
-        }
-      ]
+          color: "#746855",
+        },
+      ],
     },
     {
-      "featureType": "road.highway",
-      "elementType": "geometry.stroke",
-      "stylers": [
+      featureType: "road.highway",
+      elementType: "geometry.stroke",
+      stylers: [
         {
-          "color": "#1f2835"
-        }
-      ]
+          color: "#1f2835",
+        },
+      ],
     },
     {
-      "featureType": "road.highway",
-      "elementType": "labels.text.fill",
-      "stylers": [
+      featureType: "road.highway",
+      elementType: "labels.text.fill",
+      stylers: [
         {
-          "color": "#f3d19c"
-        }
-      ]
+          color: "#f3d19c",
+        },
+      ],
     },
     {
-      "featureType": "transit",
-      "elementType": "geometry",
-      "stylers": [
+      featureType: "transit",
+      elementType: "geometry",
+      stylers: [
         {
-          "color": "#2f3948"
-        }
-      ]
+          color: "#2f3948",
+        },
+      ],
     },
     {
-      "featureType": "transit.station",
-      "elementType": "labels.text.fill",
-      "stylers": [
+      featureType: "transit.station",
+      elementType: "labels.text.fill",
+      stylers: [
         {
-          "color": "#d59563"
-        }
-      ]
+          color: "#d59563",
+        },
+      ],
     },
     {
-      "featureType": "water",
-      "elementType": "geometry",
-      "stylers": [
+      featureType: "water",
+      elementType: "geometry",
+      stylers: [
         {
-          "color": "#17263c"
-        }
-      ]
+          color: "#17263c",
+        },
+      ],
     },
     {
-      "featureType": "water",
-      "elementType": "labels.text.fill",
-      "stylers": [
+      featureType: "water",
+      elementType: "labels.text.fill",
+      stylers: [
         {
-          "color": "#515c6d"
-        }
-      ]
+          color: "#515c6d",
+        },
+      ],
     },
     {
-      "featureType": "water",
-      "elementType": "labels.text.stroke",
-      "stylers": [
+      featureType: "water",
+      elementType: "labels.text.stroke",
+      stylers: [
         {
-          "color": "#17263c"
-        }
-      ]
-    }
+          color: "#17263c",
+        },
+      ],
+    },
   ];
 
   const {
@@ -317,19 +317,17 @@ const MapScreen = ({ navigation }) => {
     }
   }, [location, mapReady, isNavigating, heading]);
 
-  // ✅ عند بدء الملاحة، أظهر الكارد مطوية (خط صغير)
   useEffect(() => {
     if (isNavigating) {
       Animated.spring(cardAnimY, {
-        toValue: CARD_COLLAPSED, // ✅ تبدأ مطوية
+        toValue: CARD_COLLAPSED,
         useNativeDriver: false,
         tension: 80,
         friction: 10,
       }).start();
     } else {
-      // عند إيقاف الملاحة، اخفي الكارد كاملاً
       Animated.spring(cardAnimY, {
-        toValue: 400, // ✅ إخفاء كامل
+        toValue: 400,
         useNativeDriver: false,
         tension: 80,
         friction: 10,
@@ -725,7 +723,6 @@ const MapScreen = ({ navigation }) => {
       return null;
     }
 
-    // ✅ تحديد إذا الكارد مطوية أو مفتوحة
     const isCollapsed = cardAnimY._value > 100;
 
     const getStatusBadgeStyle = () => {
@@ -786,8 +783,21 @@ const MapScreen = ({ navigation }) => {
 
         <View style={styles.cardHeader}>
           <View style={styles.roadNameSection}>
-            <Text style={[styles.roadNameLabel, { color: isDark ? '#AAAAAA' : '#666666' }]}>{t("map.current_road")}</Text>
-            <Text style={[styles.roadNameText, { color: isDark ? '#FFFFFF' : '#000000' }]} numberOfLines={1}>
+            <Text
+              style={[
+                styles.roadNameLabel,
+                { color: isDark ? "#AAAAAA" : "#666666" },
+              ]}
+            >
+              {t("map.current_road")}
+            </Text>
+            <Text
+              style={[
+                styles.roadNameText,
+                { color: isDark ? "#FFFFFF" : "#000000" },
+              ]}
+              numberOfLines={1}
+            >
               {currentRoad || t("map.unknown_road")}
             </Text>
           </View>
@@ -797,7 +807,6 @@ const MapScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* ✅ المحتوى يظهر فقط لما الكارد مفتوحة */}
         <Animated.View
           style={{
             opacity: cardAnimY.interpolate({
@@ -808,16 +817,52 @@ const MapScreen = ({ navigation }) => {
           }}
         >
           <View style={styles.speedInfoRow}>
-            <View style={[styles.speedInfoCard, { backgroundColor: isDark ? '#2A2A2A' : '#F5F5F5' }]}>
-              <Text style={[styles.speedInfoLabel, { color: isDark ? '#AAAAAA' : '#666666' }]}>{t("map.speed")}</Text>
-              <Text style={[styles.speedInfoValue, { color: isDark ? '#FFFFFF' : '#333333' }]}>
+            <View
+              style={[
+                styles.speedInfoCard,
+                { backgroundColor: isDark ? "#2A2A2A" : "#F5F5F5" },
+              ]}
+            >
+              <Text
+                style={[
+                  styles.speedInfoLabel,
+                  { color: isDark ? "#AAAAAA" : "#666666" },
+                ]}
+              >
+                {t("map.speed")}
+              </Text>
+              <Text
+                style={[
+                  styles.speedInfoValue,
+                  { color: isDark ? "#FFFFFF" : "#333333" },
+                ]}
+              >
                 {Math.round(speed || 0)}
               </Text>
-              <Text style={[styles.speedInfoUnit, { color: isDark ? '#AAAAAA' : '#666666' }]}>{t("map.kmh")}</Text>
+              <Text
+                style={[
+                  styles.speedInfoUnit,
+                  { color: isDark ? "#AAAAAA" : "#666666" },
+                ]}
+              >
+                {t("map.kmh")}
+              </Text>
             </View>
 
-            <View style={[styles.speedInfoCard, { backgroundColor: isDark ? '#2A2A2A' : '#F5F5F5' }]}>
-              <Text style={[styles.speedInfoLabel, { color: isDark ? '#AAAAAA' : '#666666' }]}>{t("map.speed_limit")}</Text>
+            <View
+              style={[
+                styles.speedInfoCard,
+                { backgroundColor: isDark ? "#2A2A2A" : "#F5F5F5" },
+              ]}
+            >
+              <Text
+                style={[
+                  styles.speedInfoLabel,
+                  { color: isDark ? "#AAAAAA" : "#666666" },
+                ]}
+              >
+                {t("map.speed_limit")}
+              </Text>
               <Text
                 style={[
                   styles.speedInfoValue,
@@ -827,47 +872,120 @@ const MapScreen = ({ navigation }) => {
                         ? COLORS.statusDanger
                         : speedStatus === SPEED_STATUS.WARNING
                           ? COLORS.statusWarning
-                          : (isDark ? '#FFFFFF' : COLORS.primary),
+                          : isDark
+                            ? "#FFFFFF"
+                            : COLORS.primary,
                   },
                 ]}
               >
                 {speedLimit}
               </Text>
-              <Text style={[styles.speedInfoUnit, { color: isDark ? '#AAAAAA' : '#666666' }]}>{t("map.kmh")}</Text>
+              <Text
+                style={[
+                  styles.speedInfoUnit,
+                  { color: isDark ? "#AAAAAA" : "#666666" },
+                ]}
+              >
+                {t("map.kmh")}
+              </Text>
             </View>
           </View>
 
           {destination && remainingInfo && (
-            <View style={[styles.navInfoSection, { backgroundColor: isDark ? '#2A2A2A' : '#F8F9FA' }]}>
+            <View
+              style={[
+                styles.navInfoSection,
+                { backgroundColor: isDark ? "#2A2A2A" : "#F8F9FA" },
+              ]}
+            >
               <View style={styles.infoRow}>
-                <Text style={[styles.infoLabel, { color: isDark ? '#AAAAAA' : '#666666' }]}>📍 {t("map.destination")}</Text>
-                <Text style={[styles.infoValue, { color: isDark ? '#FFFFFF' : '#333333' }]} numberOfLines={1}>
+                <Text
+                  style={[
+                    styles.infoLabel,
+                    { color: isDark ? "#AAAAAA" : "#666666" },
+                  ]}
+                >
+                  📍 {t("map.destination")}
+                </Text>
+                <Text
+                  style={[
+                    styles.infoValue,
+                    { color: isDark ? "#FFFFFF" : "#333333" },
+                  ]}
+                  numberOfLines={1}
+                >
                   {destination.name}
                 </Text>
               </View>
 
-              <View style={[styles.divider, { backgroundColor: isDark ? '#404040' : '#E0E0E0' }]} />
+              <View
+                style={[
+                  styles.divider,
+                  { backgroundColor: isDark ? "#404040" : "#E0E0E0" },
+                ]}
+              />
 
               <View style={styles.infoRow}>
-                <Text style={[styles.infoLabel, { color: isDark ? '#AAAAAA' : '#666666' }]}>📏 {t("map.remaining_distance")}</Text>
-                <Text style={[styles.infoValue, { color: isDark ? '#FFFFFF' : '#333333' }]}>
+                <Text
+                  style={[
+                    styles.infoLabel,
+                    { color: isDark ? "#AAAAAA" : "#666666" },
+                  ]}
+                >
+                  📏 {t("map.remaining_distance")}
+                </Text>
+                <Text
+                  style={[
+                    styles.infoValue,
+                    { color: isDark ? "#FFFFFF" : "#333333" },
+                  ]}
+                >
                   {remainingInfo.distanceText}
                 </Text>
               </View>
 
               <View style={styles.infoRow}>
-                <Text style={[styles.infoLabel, { color: isDark ? '#AAAAAA' : '#666666' }]}>⏱️ {t("map.estimated_time")}</Text>
-                <Text style={[styles.infoValue, { color: isDark ? '#FFFFFF' : '#333333' }]}>
+                <Text
+                  style={[
+                    styles.infoLabel,
+                    { color: isDark ? "#AAAAAA" : "#666666" },
+                  ]}
+                >
+                  ⏱️ {t("map.estimated_time")}
+                </Text>
+                <Text
+                  style={[
+                    styles.infoValue,
+                    { color: isDark ? "#FFFFFF" : "#333333" },
+                  ]}
+                >
                   {remainingInfo.durationText}
                 </Text>
               </View>
 
               {remainingInfo.nextTurn && (
                 <>
-                  <View style={[styles.divider, { backgroundColor: isDark ? '#404040' : '#E0E0E0' }]} />
+                  <View
+                    style={[
+                      styles.divider,
+                      { backgroundColor: isDark ? "#404040" : "#E0E0E0" },
+                    ]}
+                  />
                   <View style={[styles.infoRow, styles.infoRowLast]}>
-                    <Text style={[styles.infoLabel, { color: isDark ? '#AAAAAA' : '#666666' }]}>🧭 {t("map.next_turn")}</Text>
-                    <Text style={[styles.infoValue, { color: isDark ? '#FFFFFF' : '#333333' }]}>
+                    <Text
+                      style={[
+                        styles.infoLabel,
+                        { color: isDark ? "#AAAAAA" : "#666666" },
+                      ]}
+                    >
+                      🧭 {t("map.next_turn")}
+                    </Text>
+                    <Text
+                      style={[
+                        styles.infoValue,
+                        { color: isDark ? "#FFFFFF" : "#333333" },
+                      ]}
+                    >
                       {remainingInfo.nextTurn}
                     </Text>
                   </View>
@@ -877,11 +995,20 @@ const MapScreen = ({ navigation }) => {
           )}
 
           {!destination && (
-            <View style={[styles.navInfoSection, { backgroundColor: isDark ? '#2A2A2A' : '#F8F9FA' }]}>
+            <View
+              style={[
+                styles.navInfoSection,
+                { backgroundColor: isDark ? "#2A2A2A" : "#F8F9FA" },
+              ]}
+            >
               <Text
                 style={[
                   styles.infoLabel,
-                  { textAlign: "center", opacity: 0.6, color: isDark ? '#AAAAAA' : '#666666' },
+                  {
+                    textAlign: "center",
+                    opacity: 0.6,
+                    color: isDark ? "#AAAAAA" : "#666666",
+                  },
                 ]}
               >
                 {t("map.no_destination")}
@@ -900,8 +1027,19 @@ const MapScreen = ({ navigation }) => {
       >
         <StatusBar style="dark" />
         <Text style={styles.errorIcon}>❌</Text>
-        <Text style={[styles.errorText, { color: isDark ? '#FFFFFF' : '#000000' }]}>{t("common.error")}</Text>
-        <Text style={[styles.errorSubtext, { color: isDark ? '#CCCCCC' : '#666666' }]}>GPS Error</Text>
+        <Text
+          style={[styles.errorText, { color: isDark ? "#FFFFFF" : "#000000" }]}
+        >
+          {t("common.error")}
+        </Text>
+        <Text
+          style={[
+            styles.errorSubtext,
+            { color: isDark ? "#CCCCCC" : "#666666" },
+          ]}
+        >
+          GPS Error
+        </Text>
         <TouchableOpacity
           style={styles.retryButton}
           onPress={startTracking}
@@ -920,13 +1058,18 @@ const MapScreen = ({ navigation }) => {
       >
         <StatusBar style="dark" />
         <ActivityIndicator size="large" color={theme.primary} />
-        <Text style={[styles.loadingText, { color: theme.textPrimary }]}>{t("map.loading_map")}</Text>
+        <Text style={[styles.loadingText, { color: theme.textPrimary }]}>
+          {t("map.loading_map")}
+        </Text>
       </View>
     );
   }
 
   return (
-    <View key={`map-${currentLanguage}`} style={[styles.container, { backgroundColor: theme.background }]}>
+    <View
+      key={`map-${currentLanguage}`}
+      style={[styles.container, { backgroundColor: theme.background }]}
+    >
       <StatusBar style="dark" />
 
       <MapView
@@ -1004,16 +1147,25 @@ const MapScreen = ({ navigation }) => {
       </MapView>
 
       {loadingSpeedZones && (
-        <View style={[
-          styles.loadingZonesContainer,
-          {
-            backgroundColor: isDark ? '#2D2D2D' : '#FFFFFF',
-            borderWidth: 1,
-            borderColor: isDark ? '#404040' : '#E0E0E0',
-          }
-        ]}>
+        <View
+          style={[
+            styles.loadingZonesContainer,
+            {
+              backgroundColor: isDark ? "#2D2D2D" : "#FFFFFF",
+              borderWidth: 1,
+              borderColor: isDark ? "#404040" : "#E0E0E0",
+            },
+          ]}
+        >
           <ActivityIndicator size="small" color={theme.primary} />
-          <Text style={[styles.loadingZonesText, { color: isDark ? '#FFFFFF' : '#000000' }]}>Loading speed limits...</Text>
+          <Text
+            style={[
+              styles.loadingZonesText,
+              { color: isDark ? "#FFFFFF" : "#000000" },
+            ]}
+          >
+            Loading speed limits...
+          </Text>
         </View>
       )}
 
@@ -1036,18 +1188,20 @@ const MapScreen = ({ navigation }) => {
           style={[
             styles.destinationButton,
             {
-              backgroundColor: isDark ? '#2D2D2D' : '#FFFFFF',
+              backgroundColor: isDark ? "#2D2D2D" : "#FFFFFF",
               borderWidth: 1,
-              borderColor: isDark ? '#404040' : '#E0E0E0',
-            }
+              borderColor: isDark ? "#404040" : "#E0E0E0",
+            },
           ]}
           onPress={() => setShowDestinationPicker(true)}
           activeOpacity={0.8}
         >
-          <Text style={[
-            styles.destinationButtonText,
-            { color: isDark ? '#FFFFFF' : '#333333' }
-          ]}>
+          <Text
+            style={[
+              styles.destinationButtonText,
+              { color: isDark ? "#FFFFFF" : "#333333" },
+            ]}
+          >
             📍 {t("map.set_destination")}
           </Text>
         </TouchableOpacity>
@@ -1058,18 +1212,22 @@ const MapScreen = ({ navigation }) => {
           style={[
             styles.clearDestinationButton,
             {
-              backgroundColor: isDark ? '#2D2D2D' : '#FFFFFF',
+              backgroundColor: isDark ? "#2D2D2D" : "#FFFFFF",
               borderWidth: 1,
-              borderColor: isDark ? '#404040' : '#E0E0E0',
-            }
+              borderColor: isDark ? "#404040" : "#E0E0E0",
+            },
           ]}
           onPress={handleClearDestination}
           activeOpacity={0.8}
         >
-          <Text style={[
-            styles.clearDestinationButtonText,
-            { color: isDark ? '#FFFFFF' : '#333333' }
-          ]}>✕</Text>
+          <Text
+            style={[
+              styles.clearDestinationButtonText,
+              { color: isDark ? "#FFFFFF" : "#333333" },
+            ]}
+          >
+            ✕
+          </Text>
         </TouchableOpacity>
       )}
 

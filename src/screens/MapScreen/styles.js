@@ -1,11 +1,9 @@
-// src/screens/MapScreen/styles.js
 import { StyleSheet, Dimensions, I18nManager } from "react-native";
 import { COLORS } from "../../config/colors";
 
 const { width, height } = Dimensions.get("window");
 const isRTL = I18nManager.isRTL;
 
-// Dynamic styles function for RTL/LTR support
 export const createStyles = (language = "ar") => {
   const isArabic = language === "ar";
 
