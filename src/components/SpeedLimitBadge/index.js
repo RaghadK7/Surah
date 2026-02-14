@@ -3,9 +3,6 @@ import { View, Text, StyleSheet } from "react-native";
 import { useTranslation } from "react-i18next";
 import { COLORS } from "../../config/colors";
 
-/**
- * Speed limit badge component
- */
 const SpeedLimitBadge = ({ speedLimit }) => {
   const { t } = useTranslation();
 

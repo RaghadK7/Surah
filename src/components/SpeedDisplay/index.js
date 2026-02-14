@@ -5,9 +5,6 @@ import { useTheme } from "../../contexts/ThemeContext";
 import { COLORS } from "../../config/colors";
 import { formatSpeed, getSpeedColor } from "../../utils/speedCalculator";
 
-/**
- * Speed display component
- */
 const SpeedDisplay = ({ speed, status }) => {
   const { t } = useTranslation();
   const { theme } = useTheme();
@@ -15,14 +12,21 @@ const SpeedDisplay = ({ speed, status }) => {
   const displaySpeed = formatSpeed(speed);
 
   return (
-    <View style={[styles.container, {
-      backgroundColor: theme.cardBackground,
-      borderColor: theme.cardBorder,
-      shadowColor: theme.shadowColor,
-    }]}>
+    <View
+      style={[
+        styles.container,
+        {
+          backgroundColor: theme.cardBackground,
+          borderColor: theme.cardBorder,
+          shadowColor: theme.shadowColor,
+        },
+      ]}
+    >
       <Text style={[styles.speed, { color: speedColor }]}>{displaySpeed}</Text>
       <Text style={[styles.unit, { color: theme.textSecondary }]}>km/h</Text>
-      <Text style={[styles.label, { color: theme.textTertiary }]}>{t("map.current_speed")}</Text>
+      <Text style={[styles.label, { color: theme.textTertiary }]}>
+        {t("map.current_speed")}
+      </Text>
     </View>
   );
 };
