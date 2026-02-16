@@ -12,11 +12,11 @@ const SplashScreen = ({ navigation }) => {
   useEffect(() => {
     const preloadLogo = async () => {
       try {
-        console.log('🔄 Starting logo preload...');
+        console.log("🔄 Starting logo preload...");
         await Asset.fromModule(
           require("../assets/images/logo.png"),
         ).downloadAsync();
-        console.log('✅ Logo preloaded successfully');
+        console.log("✅ Logo preloaded successfully");
         setLogoLoaded(true);
       } catch (error) {
         console.error("❌ Logo preload error:", error);
@@ -49,7 +49,6 @@ const SplashScreen = ({ navigation }) => {
             onLoad={() => console.log("✅ Logo loaded!")}
             onError={(error) => {
               console.error("❌ Logo load error:", error);
-              // You might want to show fallback UI here
             }}
           />
         ) : (
@@ -94,7 +93,6 @@ const styles = StyleSheet.create({
     height: width * 1.2,
     borderRadius: 40,
   },
-  // ✅ أنماط placeholder للوجو
   logoPlaceholder: {
     backgroundColor: COLORS.primary,
     justifyContent: "center",

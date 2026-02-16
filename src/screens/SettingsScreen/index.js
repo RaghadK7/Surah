@@ -1,5 +1,3 @@
-// src/screens/SettingsScreen/index.js
-
 import React, { useState, useEffect } from "react";
 import {
   View,
@@ -89,7 +87,7 @@ const SettingsScreen = ({ navigation }) => {
     if (!user) return "U";
     if (user.displayName) {
       const names = user.displayName.split(" ");
-      return names.length > 1 
+      return names.length > 1
         ? `${names[0].charAt(0)}${names[1].charAt(0)}`.toUpperCase()
         : names[0].charAt(0).toUpperCase();
     }
@@ -114,28 +112,24 @@ const SettingsScreen = ({ navigation }) => {
 
   // Handle logout
   const handleLogout = () => {
-    Alert.alert(
-      t("settings.logout"),
-      t("settings.logout_confirm"),
-      [
-        { text: t("common.cancel"), style: "cancel" },
-        {
-          text: t("settings.logout"),
-          style: "destructive",
-          onPress: async () => {
-            try {
-              await signOut(auth);
-              navigation.replace("Login");
-            } catch (error) {
-              console.error("Logout error:", error);
-              Alert.alert(t("common.error"), t("settings.logout_error"), [
-                { text: t("common.ok") },
-              ]);
-            }
-          },
+    Alert.alert(t("settings.logout"), t("settings.logout_confirm"), [
+      { text: t("common.cancel"), style: "cancel" },
+      {
+        text: t("settings.logout"),
+        style: "destructive",
+        onPress: async () => {
+          try {
+            await signOut(auth);
+            navigation.replace("Login");
+          } catch (error) {
+            console.error("Logout error:", error);
+            Alert.alert(t("common.error"), t("settings.logout_error"), [
+              { text: t("common.ok") },
+            ]);
+          }
         },
-      ]
-    );
+      },
+    ]);
   };
 
   // Handle theme change
@@ -167,7 +161,6 @@ const SettingsScreen = ({ navigation }) => {
     ]);
   };
 
-  // ========== ✅ DYNAMIC THEME COLORS ==========
   const getThemeColors = () => {
     if (isDark) {
       return {
@@ -518,21 +511,33 @@ const SettingsScreen = ({ navigation }) => {
 
       {/* User Profile Section */}
       {currentUser && (
-        <View style={[styles.userSectionCompact, { backgroundColor: colors.cardBg, borderColor: colors.border }]}>
+        <View
+          style={[
+            styles.userSectionCompact,
+            { backgroundColor: colors.cardBg, borderColor: colors.border },
+          ]}
+        >
           <View style={styles.userInfoCompact}>
             {/* User Avatar */}
-            <View style={[styles.userAvatarCompact, { backgroundColor: "#007AFF" }]}>
+            <View
+              style={[styles.userAvatarCompact, { backgroundColor: "#007AFF" }]}
+            >
               <Text style={styles.userAvatarTextCompact}>
                 {getUserInitials(currentUser)}
               </Text>
             </View>
-            
+
             {/* User Details */}
             <View style={styles.userDetailsCompact}>
               <Text style={[styles.userNameCompact, { color: colors.text }]}>
                 {getUsernameFromEmail(currentUser)}
               </Text>
-              <Text style={[styles.userEmailCompact, { color: colors.textSecondary }]}>
+              <Text
+                style={[
+                  styles.userEmailCompact,
+                  { color: colors.textSecondary },
+                ]}
+              >
                 {currentUser.email || ""}
               </Text>
             </View>
@@ -674,7 +679,10 @@ const SettingsScreen = ({ navigation }) => {
           {/* Logout Button */}
           {currentUser && (
             <TouchableOpacity
-              style={[styles.logoutButtonSection, { backgroundColor: colors.cardBg, borderColor: colors.border }]}
+              style={[
+                styles.logoutButtonSection,
+                { backgroundColor: colors.cardBg, borderColor: colors.border },
+              ]}
               onPress={handleLogout}
               activeOpacity={0.7}
             >

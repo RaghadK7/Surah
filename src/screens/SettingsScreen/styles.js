@@ -1,4 +1,3 @@
-// src/screens/SettingsScreen/styles.js
 import { StyleSheet } from "react-native";
 import { COLORS } from "../../config/colors";
 
@@ -241,7 +240,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  
+
   // User Profile Section - Compact Version
   userSectionCompact: {
     backgroundColor: COLORS.white,
@@ -287,7 +286,7 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     opacity: 0.7,
   },
-  
+
   // Logout Button Section
   logoutButtonSection: {
     backgroundColor: COLORS.white,
