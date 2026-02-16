@@ -1,4 +1,3 @@
-// src/components/BottomNav/index.js
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useTranslation } from "react-i18next";
@@ -6,9 +5,6 @@ import { useLanguage } from "../../contexts/LanguageContext";
 import { useTheme } from "../../contexts/ThemeContext";
 import { COLORS } from "../../config/colors";
 
-/**
- * Bottom navigation bar component with enhanced dark/light mode
- */
 const BottomNav = ({ activeTab = "map", onTabPress }) => {
   const { t, i18n } = useTranslation();
   const { currentLanguage } = useLanguage();
@@ -40,7 +36,7 @@ const BottomNav = ({ activeTab = "map", onTabPress }) => {
 
   const colors = getThemeColors();
 
-  // Force tabs to re-evaluate when language changes
+  // Force tabs to re-evaluate when language change
   const tabs = React.useMemo(
     () => [
       { id: "map", icon: "🏠", label: t("nav.home") },
