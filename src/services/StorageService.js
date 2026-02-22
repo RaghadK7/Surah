@@ -289,5 +289,4 @@ export const PermissionManager = {
   },
 };
 
-// Export as named export for convenience
 export const StorageService = regularStorage;

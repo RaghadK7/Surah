@@ -11,10 +11,6 @@ import {
 import { speedLimitCache } from "../utils/cacheManager";
 import { DEFAULT_SPEED_LIMITS } from "../config/constants";
 
-/**
- * Firestore Speed Limit Service
- * Fast, scalable, real-time speed limit data
- */
 class FirestoreSpeedService {
   constructor() {
     this.collectionName = "speed_limits";
@@ -116,7 +112,7 @@ class FirestoreSpeedService {
       const q = query(
         collection(db, this.collectionName),
         where("latitude", ">=", parseFloat(minLat)),
-        where("latitude", "<=", parseFloat(maxLat))
+        where("latitude", "<=", parseFloat(maxLat)),
       );
 
       const querySnapshot = await getDocs(q);
@@ -146,7 +142,7 @@ class FirestoreSpeedService {
           roadType: loc.roadType,
           city: loc.city,
           source: loc.source,
-        })
+        }),
       );
 
       await Promise.all(promises);
